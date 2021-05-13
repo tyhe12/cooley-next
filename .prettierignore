@@ -1,0 +1,5 @@
+/.next
+/.serverless_nextjs
+/.serverless
+/build
+/node_modules
