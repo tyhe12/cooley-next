@@ -3,10 +3,10 @@ import SwipeableViews from 'react-swipeable-views'
 import { autoPlay } from 'react-swipeable-views-utils'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 import Fade from '@material-ui/core/Fade'
-import Pagination from './CarouselPagination'
 import IconButton from '@material-ui/core/IconButton'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
+import Pagination from './CarouselPagination'
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 
