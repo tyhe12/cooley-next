@@ -1,23 +1,24 @@
 import '../styles/globals.css'
 import { useState } from 'react'
 import type { AppProps /*, AppContext */ } from 'next/app'
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
+import {
+  createStyles,
+  makeStyles,
+  ThemeProvider,
+  createMuiTheme,
+} from '@material-ui/core/styles'
 import NavBar from '../components/NavBar'
 import NavDrawer from '../components/NavDrawer'
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: [
-      '"Quicksand"',
-      'sans-serif'
-    ].join(',')
-  }
+    fontFamily: ['"Quicksand"', 'sans-serif'].join(','),
+  },
 })
 
 const navDrawerWidth = 280
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     appContainer: {
       width: '100%',
@@ -55,12 +56,8 @@ function MyApp({ Component, pageProps }: AppProps) {
             onDrawerOpen={onNavDrawerOpen}
           />
         </div>
-        <div
-          className={styles.mainContent}
-        >
-          <NavBar
-            onClickMenu={onNavDrawerOpen}
-          />
+        <div className={styles.mainContent}>
+          <NavBar onClickMenu={onNavDrawerOpen} />
           <Component {...pageProps} />
         </div>
       </div>

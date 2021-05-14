@@ -10,8 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import AccountIcon from '@material-ui/icons/AccountCircle'
 import Fade from '@material-ui/core/Fade'
 
-
-import { createStyles, fade, Theme, makeStyles } from '@material-ui/core/styles'
+import { createStyles, Theme, makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -42,8 +41,8 @@ const useStyles = makeStyles((theme: Theme) =>
       width: '100%',
     },
     menuPaper: {
-      top: '65px !important'
-    }
+      top: '65px !important',
+    },
   })
 )
 
@@ -60,12 +59,12 @@ const NavBar: React.FC<Props> = (props: Props) => {
   const handleOpen = (event) => {
     setAnchorEl(event.currentTarget)
     setOpen(true)
-  };
+  }
 
   const handleClose = () => {
     setAnchorEl(null)
     setOpen(false)
-  };
+  }
 
   return (
     <>
@@ -90,13 +89,19 @@ const NavBar: React.FC<Props> = (props: Props) => {
 
           <Button color="inherit">About</Button>
           <Button color="inherit">Services</Button>
-          <Button onClick={handleOpen} onMouseEnter={handleOpen} color="inherit">More</Button>
+          <Button
+            onClick={handleOpen}
+            onMouseEnter={handleOpen}
+            color="inherit"
+          >
+            More
+          </Button>
           {
             // Need to use popover instead
           }
-          {/* <Menu
+          <Menu
             classes={{
-              paper: styles.menuPaper
+              paper: styles.menuPaper,
             }}
             id="fade-menu"
             anchorEl={anchorEl}
@@ -109,12 +114,11 @@ const NavBar: React.FC<Props> = (props: Props) => {
             <MenuItem onClick={handleClose}>Service Details</MenuItem>
             <MenuItem onClick={handleClose}>FAQs</MenuItem>
             <MenuItem onClick={handleClose}>Privacy Policy</MenuItem>
-          </Menu> */}
+          </Menu>
 
           <IconButton className={styles.accountButton}>
             <AccountIcon />
           </IconButton>
-          
         </Toolbar>
       </AppBar>
     </>

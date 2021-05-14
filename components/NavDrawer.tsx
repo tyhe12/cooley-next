@@ -1,5 +1,4 @@
 import React from 'react'
-import Hidden from '@material-ui/core/Hidden'
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
@@ -50,11 +49,11 @@ const useStyles = makeStyles((theme: Theme) =>
       marginBottom: theme.spacing(1),
     },
     spacer: {
-      height: '100%'
+      height: '100%',
     },
     text: {
-      fontSize: '0.875rem'
-    }
+      fontSize: '0.875rem',
+    },
   })
 )
 
@@ -62,7 +61,7 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
   const { open = true, onDrawerClose, onDrawerOpen } = props
   const styles = useStyles(props)
   const smallListItemClasses = {
-    primary: styles.text
+    primary: styles.text,
   }
 
   const drawer = (
@@ -134,7 +133,10 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
           <ListItemIcon>
             <EmailIcon />
           </ListItemIcon>
-          <ListItemText classes={smallListItemClasses} primary="info@cleaningwithcooley.com" />
+          <ListItemText
+            classes={smallListItemClasses}
+            primary="info@cleaningwithcooley.com"
+          />
         </ListItem>
       </List>
     </div>
