@@ -67,7 +67,7 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
   const drawer = (
     <div className={styles.drawer}>
       <div className={styles.logo}>
-        <Typography variant="h6">Workout</Typography>
+        <Typography variant="h6">Cooley Logo</Typography>
       </div>
 
       <Divider />

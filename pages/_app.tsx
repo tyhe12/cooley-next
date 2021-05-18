@@ -9,10 +9,25 @@ import {
 } from '@material-ui/core/styles'
 import NavBar from '../components/NavBar'
 import NavDrawer from '../components/NavDrawer'
+import Footer from '../components/Footer'
 
 const theme = createMuiTheme({
   typography: {
     fontFamily: ['"Quicksand"', 'sans-serif'].join(','),
+  },
+  palette: {
+    secondary: {
+      light: '#33c9dc',
+      main: '#00bcd4',
+      dark: '#008394',
+      contrastText: 'rgba(0, 0, 0, 0.87)',
+    },
+    primary: {
+      light: '#f6a5c0',
+      main: '#f48fb1',
+      dark: '#aa647b',
+      contrastText: 'rgba(0, 0, 0, 0.87)',
+    },
   },
 })
 
@@ -59,6 +74,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <div className={styles.mainContent}>
           <NavBar onClickMenu={onNavDrawerOpen} />
           <Component {...pageProps} />
+          <Footer />
         </div>
       </div>
     </ThemeProvider>
