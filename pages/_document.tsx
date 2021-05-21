@@ -16,6 +16,10 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap"
             rel="stylesheet"
           />
+          <script
+            src="https://kit.fontawesome.com/f99c8235c5.js"
+            crossOrigin="anonymous"
+          ></script>
         </Head>
         <body>
           <Main />

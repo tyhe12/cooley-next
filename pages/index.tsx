@@ -1,8 +1,72 @@
 import Head from 'next/head'
-// import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Grid from '@material-ui/core/Grid'
+import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+import Icon from '@material-ui/core/Icon'
+
+import Carousel from '../components/Carousel'
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    container: {
+      minHeight: '100vh',
+    },
+    main: {
+      width: '100%',
+      flex: 1,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    slide: {
+      padding: 15,
+      minHeight: 600,
+      color: '#fff',
+    },
+    slide1: {
+      backgroundColor: '#FEA900',
+    },
+    slide2: {
+      backgroundColor: '#B3DC4A',
+    },
+    slide3: {
+      backgroundColor: '#6AC0FF',
+    },
+    row: {
+      // display: 'flex',
+      // justifyContent: 'center',
+      marginBottom: theme.spacing(8),
+    },
+    largeButton: {
+      color: 'white',
+      padding: `${theme.spacing(2)}px ${theme.spacing(4)}px`,
+      marginLeft: theme.spacing(2),
+      marginRight: theme.spacing(2),
+    },
+    card: {
+      maxWidth: 400,
+      marginLeft: theme.spacing(1),
+      marginRight: theme.spacing(1),
+      marginBottom: theme.spacing(2),
+    },
+    cardTitle: {
+      display: 'flex',
+      justifyContent: 'left',
+      alignItems: 'center',
+    },
+    cardIcon: {
+      marginRight: theme.spacing(1),
+      width: 'auto',
+    },
+  })
+)
 
 export default function Home() {
+  const styles = useStyles()
   return (
     <div className={styles.container}>
       <Head>
@@ -12,44 +76,290 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <Grid container>
+          <Grid className={styles.row} item xs={12}>
+            <Carousel>
+              <div className={`${styles.slide} ${styles.slide1}`}>
+                slide n°1
+              </div>
+              <div className={`${styles.slide} ${styles.slide2}`}>
+                slide n°2
+              </div>
+              <div className={`${styles.slide} ${styles.slide3}`}>
+                slide n°3
+              </div>
+              <div className={`${styles.slide} ${styles.slide2}`}>
+                slide n°4
+              </div>
+              <div className={`${styles.slide} ${styles.slide3}`}>
+                slide n°5
+              </div>
+            </Carousel>
+          </Grid>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+          <Grid className={styles.row} justify="center" container item xs={12}>
+            <Button
+              className={styles.largeButton}
+              variant="contained"
+              size="large"
+              color="primary"
+            >
+              <Typography variant="h6">Contact Us For Free Quote</Typography>
+            </Button>
+          </Grid>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+          <Grid className={styles.row} container item xs={12}>
+            <Grid item xs={12} justify="center">
+              <Typography align="center" variant="h4" component="h2">
+                What is Cleaning With Cooley
+              </Typography>
+            </Grid>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+            <Grid container item xs={12} justify="center">
+              <Card className={styles.card}>
+                <CardContent>
+                  <div className={styles.cardTitle}>
+                    <Icon
+                      className={`${styles.cardIcon} fas fa-user-tie`}
+                      color="primary"
+                    />
+                    <Typography variant="h5" component="h3">
+                      Who We Are
+                    </Typography>
+                  </div>
+                  <Typography variant="body2" component="p">
+                    Cleaning with Cooley is a Chicago Cleaning Service located
+                    in the downtown Chicago area. We offer a wide range of
+                    services to residential clients and business owners, from
+                    general room cleaning, office cleaning and much more!
+                  </Typography>
+                </CardContent>
+              </Card>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+              <Card className={styles.card}>
+                <CardContent>
+                  <div className={styles.cardTitle}>
+                    <Icon
+                      className={`${styles.cardIcon} fas fa-bullseye`}
+                      color="primary"
+                    />
+                    <Typography variant="h5" component="h3">
+                      Our Mission
+                    </Typography>
+                  </div>
+                  <Typography variant="body2" component="p">
+                    Our goal is to provide a clean and a positive atmosphere in
+                    our clients’ home by delivering world class customer service
+                    and cleaning. We value open and honest relationships with
+                    our clients and love giving them a little time back in their
+                    week to focus on their goals. We want to always deliver the
+                    “Wow” through our services.
+                  </Typography>
+                </CardContent>
+              </Card>
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+              <Card className={styles.card}>
+                <CardContent>
+                  <div className={styles.cardTitle}>
+                    <Icon
+                      className={`${styles.cardIcon} fas fa-hand-sparkles`}
+                      color="primary"
+                    />
+                    <Typography variant="h5" component="h3">
+                      What We Do
+                    </Typography>
+                  </div>
+                  <Typography variant="body2" component="p">
+                    We tailored our residential and commercial cleaning service
+                    to make sure every space - whether it’s a studio apartment
+                    in Wicker Park, a brownstone in Lincoln Park, or an office
+                    in The Loop - is as beautiful as it can be with complete
+                    satisfaction!
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+
+          <Grid className={styles.row} container item xs={12}>
+            <Grid container justify="center">
+              <Typography align="center" variant="h4" component="h2">
+                Why Clean With Cooley
+              </Typography>
+            </Grid>
+
+            <Grid container justify="center">
+              <Card className={styles.card}>
+                <CardContent>
+                  <div className={styles.cardTitle}>
+                    <Icon
+                      className={`${styles.cardIcon} fas fa-leaf`}
+                      color="primary"
+                    />
+                    <Typography variant="h5" component="h3">
+                      Eco Friendly
+                    </Typography>
+                  </div>
+                  <Typography variant="body2" component="p">
+                    We offer Eco-friendly house cleaning products that don’t
+                    contain harsh nor harmful chemicals. We always want to help
+                    you maintain a clean &amp; healthy home.
+                  </Typography>
+                </CardContent>
+              </Card>
+
+              <Card className={styles.card}>
+                <CardContent>
+                  <div className={styles.cardTitle}>
+                    <Icon
+                      className={`${styles.cardIcon} fas fa-shield-alt`}
+                      color="primary"
+                    />
+                    <Typography variant="h5" component="h3">
+                      Licensed, Insured &amp; Bonded
+                    </Typography>
+                  </div>
+                  <Typography variant="body2" component="p">
+                    Cleaning with Cooley is fully Licensed, Bonded &amp; Insured
+                    to protect your home and give you a piece of mind.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+
+            <Grid container xs={12} justify="center">
+              <Card className={styles.card}>
+                <CardContent>
+                  <div className={styles.cardTitle}>
+                    <Icon
+                      className={`${styles.cardIcon} fas fa-smile`}
+                      color="primary"
+                    />
+                    <Typography variant="h5" component="h3">
+                      Great Customer Service
+                    </Typography>
+                  </div>
+                  <Typography variant="body2" component="p">
+                    Our #1 goal is to deliver world class customers service to
+                    our clients. We provide exceptional training to all our
+                    professional housekeepers/cleaners. All our employees
+                    undergo a back ground check because we value open and honest
+                    relationships with our clients. We always want to provide a
+                    clean and positive atmosphere in our clients’ home!
+                  </Typography>
+                </CardContent>
+              </Card>
+
+              <Card className={styles.card}>
+                <CardContent>
+                  <div className={styles.cardTitle}>
+                    <Icon
+                      className={`${styles.cardIcon} fas fa-thumbs-up`}
+                      color="primary"
+                    />
+                    <Typography variant="h5" component="h3">
+                      100% Satisfaction Guarantee
+                    </Typography>
+                  </div>
+                  <Typography variant="body2" component="p">
+                    It’s rare to find a company that stands behind its work. If
+                    for any reason you’re not satisfied with our work let us
+                    know within 48 hours and we will return to re-clean any of
+                    the areas missed free of charge! Our goal is to always put
+                    you and your home first.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+
+          <Grid className={styles.row} item xs={12}>
+            <Grid item xs={12} justify="center">
+              <Typography align="center" variant="h4" component="h2">
+                Royalty Program
+              </Typography>
+            </Grid>
+
+            <Grid container item xs={12} justify="center">
+              <Card className={styles.card}>
+                <CardContent>
+                  <div className={styles.cardTitle}>
+                    <Icon
+                      className={`${styles.cardIcon} fas fa-gift`}
+                      color="primary"
+                    />
+                    <Typography variant="h5" component="h3">
+                      New Customer
+                    </Typography>
+                  </div>
+                  <Typography variant="body2" component="p">
+                    We love to welcome new clients with open arms. New customers
+                    will receive exclusive promotions!
+                  </Typography>
+                </CardContent>
+              </Card>
+
+              <Card className={styles.card}>
+                <CardContent>
+                  <div className={styles.cardTitle}>
+                    <Icon
+                      className={`${styles.cardIcon} fas fa-user-friends`}
+                      color="primary"
+                    />
+                    <Typography variant="h5" component="h3">
+                      Referral Incentives
+                    </Typography>
+                  </div>
+                  <Typography variant="body2" component="p">
+                    We value all our clients and want to show our appreciation!
+                    Refer someone to our services and you’ll receive 25% off
+                    your next clean (following your referral clean). Your
+                    referral will receive 20% off their 1st initial clean!
+                  </Typography>
+                </CardContent>
+              </Card>
+
+              <Card className={styles.card}>
+                <CardContent>
+                  <div className={styles.cardTitle}>
+                    <Icon
+                      className={`${styles.cardIcon} fas fa-broom`}
+                      color="primary"
+                    />
+                    <Typography variant="h5" component="h3">
+                      Free Clean
+                    </Typography>
+                  </div>
+                  <Typography variant="body2" component="p">
+                    Refer 3 friends, family, neighbor or colleagues for a clean
+                    and you’ll get your next clean for free (following your
+                    referral clean).
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+
+          <Grid className={styles.row} container justify="center" item xs={12}>
+            <Button
+              className={styles.largeButton}
+              variant="contained"
+              size="large"
+              color="primary"
+            >
+              <Typography variant="h6">Check Out Our Services</Typography>
+            </Button>
+
+            <Button
+              className={styles.largeButton}
+              variant="contained"
+              size="large"
+              color="primary"
+            >
+              <Typography variant="h6">Contact Us For Free Quote</Typography>
+            </Button>
+          </Grid>
+        </Grid>
       </main>
     </div>
   )

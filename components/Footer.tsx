@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.contrastText,
       width: '100%',
-      borderTop: '1px solid grey',
+      // borderTop: '1px solid grey',
     },
     logoContainer: {
       display: 'flex',

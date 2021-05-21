@@ -52,10 +52,11 @@ const useStyles = makeStyles((theme: Theme) =>
 export interface Props {
   children?: React.ReactNodeArray
   interval?: number
+  control?: boolean
 }
 
 const Carousel: React.FC<Props> = (props: Props) => {
-  const { children, interval = 3000 } = props
+  const { children, interval = 3000, control = false } = props
   const viewCount = children.length ?? 0
   const styles = useStyles()
   const [index, setIndex] = useState(0)
@@ -92,24 +93,26 @@ const Carousel: React.FC<Props> = (props: Props) => {
       <div className={styles.pagination}>
         <Pagination count={viewCount} index={index} />
       </div>
-      <div className={styles.controlContainer}>
-        <Fade in={showControl}>
-          <div className={styles.control}>
-            <IconButton
-              className={styles.controlButton}
-              onClick={decrementIndex}
-            >
-              <ChevronLeftIcon className={styles.icon} />
-            </IconButton>
-            <IconButton
-              className={styles.controlButton}
-              onClick={incrementIndex}
-            >
-              <ChevronRightIcon />
-            </IconButton>
-          </div>
-        </Fade>
-      </div>
+      {control && (
+        <div className={styles.controlContainer}>
+          <Fade in={showControl}>
+            <div className={styles.control}>
+              <IconButton
+                className={styles.controlButton}
+                onClick={decrementIndex}
+              >
+                <ChevronLeftIcon className={styles.icon} />
+              </IconButton>
+              <IconButton
+                className={styles.controlButton}
+                onClick={incrementIndex}
+              >
+                <ChevronRightIcon />
+              </IconButton>
+            </div>
+          </Fade>
+        </div>
+      )}
     </div>
   )
 }
