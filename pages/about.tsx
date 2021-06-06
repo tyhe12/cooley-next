@@ -22,13 +22,13 @@ const useStyles = makeStyles((theme: Theme) =>
     avatarContainer: {
       display: 'flex',
       justifyContent: 'center',
-      width: '100%'
+      width: '100%',
     },
     paragraph: {
       marginBottom: theme.spacing(2),
     },
     block: {
-      display: 'block'
+      display: 'block',
     },
   })
 )
@@ -59,31 +59,39 @@ export default function Home() {
 
           <Grid className={styles.row} item xs={12}>
             <Typography className={styles.paragraph} variant="body1">
-              I started Cleaning with Cooley in 2018. After keeping homes for over 15 years, I found that a successful clean depended on attention to detail, quality products and absolute integrity.
+              I started Cleaning with Cooley in 2018. After keeping homes for
+              over 15 years, I found that a successful clean depended on
+              attention to detail, quality products and absolute integrity.
             </Typography>
 
             <Typography className={styles.paragraph} variant="body1">
-              I take pride in my work and believe in open, honest relationships with my clients. Their trust is the highest compliment they can give me
+              I take pride in my work and believe in open, honest relationships
+              with my clients. Their trust is the highest compliment they can
+              give me
             </Typography>
 
             <Typography className={styles.paragraph} variant="body1">
-              My mission is to give every customer a little time back each week by keeping their home clean and beautiful so they can focus on their goals.
+              My mission is to give every customer a little time back each week
+              by keeping their home clean and beautiful so they can focus on
+              their goals.
             </Typography>
 
             <Typography className={styles.paragraph} variant="body1">
-              Outside of the business, I enjoy reading, a good Netflix binge and traveling.
+              Outside of the business, I enjoy reading, a good Netflix binge and
+              traveling.
             </Typography>
 
             <Typography className={styles.paragraph} variant="body1">
-              <span className={styles.block}>Tracy Cooley, Cleaning with Cooley LLC</span>
+              <span className={styles.block}>
+                Tracy Cooley, Cleaning with Cooley LLC
+              </span>
               <span className={styles.block}>Founder and CEO</span>
             </Typography>
 
             <Typography className={styles.paragraph} variant="body1">
-            Privately owned and operated company
+              Privately owned and operated company
             </Typography>
           </Grid>
-
         </Grid>
       </main>
     </div>
