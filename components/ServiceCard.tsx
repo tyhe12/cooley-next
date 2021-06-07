@@ -1,0 +1,44 @@
+import React, { useState } from 'react'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    card: {
+      margin: theme.spacing(1),
+      paddingTop: theme.spacing(3),
+      paddingBottom: theme.spacing(3),
+    },
+  })
+)
+
+export interface Props {
+  children?: React.ReactNode | React.ReactNodeArray
+}
+
+const ServiceCard: React.FC<Props> = (props: Props) => {
+  const { children } = props
+  const [hover, setHover] = useState(false)
+  const styles = useStyles()
+  const handleEnter = () => {
+    setHover(true)
+  }
+  const handleExit = () => {
+    setHover(false)
+  }
+  return (
+    <>
+      <Card
+        onMouseEnter={handleEnter}
+        onMouseLeave={handleExit}
+        raised={hover}
+        className={styles.card}
+      >
+        <CardContent>{children}</CardContent>
+      </Card>
+    </>
+  )
+}
+
+export default ServiceCard
