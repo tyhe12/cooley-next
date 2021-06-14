@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useState } from 'react'
 import Grid from '@material-ui/core/Grid'
+import Container from '@material-ui/core/Container'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Typography from '@material-ui/core/Typography'
@@ -16,6 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
+      paddingTop: theme.spacing(1),
     },
     row: {
       marginBottom: theme.spacing(8),
@@ -44,34 +46,42 @@ export default function Services() {
       </Head>
 
       <main className={styles.main}>
-        <Grid container>
-          <Grid className={styles.row} item xs={12}>
-            <Tabs
-              value={tabValue}
-              onChange={handleChange}
-              indicatorColor="primary"
-              textColor="primary"
-              variant="fullWidth"
-              centered
-            >
-              <Tab label="Services" />
-              <Tab label="Add-ons" />
-            </Tabs>
-          </Grid>
+        <Container>
+          <Grid container>
+            <Grid className={styles.row} item xs={12}>
+              <Tabs
+                value={tabValue}
+                onChange={handleChange}
+                indicatorColor="primary"
+                textColor="primary"
+                variant="fullWidth"
+                centered
+              >
+                <Tab label="Services" />
+                <Tab label="Add-ons" />
+              </Tabs>
+            </Grid>
 
-          <Grid className={styles.row} container item justify="center" xs={12}>
-            <Grid xs={12} md={6} item>
-              <ServiceCard>
-                <Typography>Studio/One Bedroom</Typography>
-              </ServiceCard>
-            </Grid>
-            <Grid xs={12} md={6} item>
-              <ServiceCard>
-                <Typography>Two Bedroom</Typography>
-              </ServiceCard>
+            <Grid
+              className={styles.row}
+              container
+              item
+              justify="center"
+              xs={12}
+            >
+              <Grid xs={12} md={6} item>
+                <ServiceCard>
+                  <Typography>Studio/One Bedroom</Typography>
+                </ServiceCard>
+              </Grid>
+              <Grid xs={12} md={6} item>
+                <ServiceCard>
+                  <Typography>Two Bedroom</Typography>
+                </ServiceCard>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
+        </Container>
       </main>
     </div>
   )
