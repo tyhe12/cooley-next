@@ -12,7 +12,7 @@ import InfoIcon from '@material-ui/icons/Info'
 import OfferIcon from '@material-ui/icons/LocalOffer'
 import HelpIcon from '@material-ui/icons/Help'
 import LockIcon from '@material-ui/icons/Lock'
-
+import Link from 'next/link'
 import PhoneIcon from '@material-ui/icons/Phone'
 import EmailIcon from '@material-ui/icons/Email'
 
@@ -64,83 +64,6 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
     primary: styles.text,
   }
 
-  const drawer = (
-    <div className={styles.drawer}>
-      <div className={styles.logo}>
-        <Typography variant="h6">Cooley Logo</Typography>
-      </div>
-
-      <Divider />
-
-      <List>
-        <ListItem button>
-          <ListItemIcon>
-            <HomeIcon />
-          </ListItemIcon>
-          <ListItemText primary="Home" />
-        </ListItem>
-
-        <ListItem button>
-          <ListItemIcon>
-            <AccountIcon />
-          </ListItemIcon>
-          <ListItemText primary="Profile" />
-        </ListItem>
-
-        <ListItem button>
-          <ListItemIcon>
-            <InfoIcon />
-          </ListItemIcon>
-          <ListItemText primary="About" />
-        </ListItem>
-
-        <ListItem button>
-          <ListItemIcon>
-            <OfferIcon />
-          </ListItemIcon>
-          <ListItemText primary="Services" />
-        </ListItem>
-
-        <ListItem button>
-          <ListItemIcon>
-            <HelpIcon />
-          </ListItemIcon>
-          <ListItemText primary="FAQs" />
-        </ListItem>
-
-        <ListItem button>
-          <ListItemIcon>
-            <LockIcon />
-          </ListItemIcon>
-          <ListItemText primary="Privacy Policy" />
-        </ListItem>
-      </List>
-
-      <Divider />
-
-      <div className={styles.spacer}></div>
-
-      <Divider />
-      <List>
-        <ListItem button>
-          <ListItemIcon>
-            <PhoneIcon />
-          </ListItemIcon>
-          <ListItemText classes={smallListItemClasses} primary="708-261-2306" />
-        </ListItem>
-
-        <ListItem button>
-          <ListItemIcon>
-            <EmailIcon />
-          </ListItemIcon>
-          <ListItemText
-            classes={smallListItemClasses}
-            primary="info@cleaningwithcooley.com"
-          />
-        </ListItem>
-      </List>
-    </div>
-  )
   return (
     <nav className={styles.navContainer} aria-label="navigation drawer">
       <SwipeableDrawer
@@ -156,7 +79,100 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
           keepMounted: true, // Better open performance on mobile.
         }}
       >
-        {drawer}
+        <div className={styles.drawer}>
+          <div className={styles.logo}>
+            <Typography variant="h6">Cooley Logo</Typography>
+          </div>
+
+          <Divider />
+
+          <List>
+            <Link href="/">
+              <ListItem button onClick={onDrawerClose}>
+                <ListItemIcon>
+                  <HomeIcon />
+                </ListItemIcon>
+                <ListItemText primary="Home" />
+              </ListItem>
+            </Link>
+
+            <Link href="/profile">
+              <ListItem button onClick={onDrawerClose}>
+                <ListItemIcon>
+                  <AccountIcon />
+                </ListItemIcon>
+                <ListItemText primary="Profile" />
+              </ListItem>
+            </Link>
+
+            <Link href="/about">
+              <ListItem button onClick={onDrawerClose}>
+                <ListItemIcon>
+                  <InfoIcon />
+                </ListItemIcon>
+                <ListItemText primary="About" />
+              </ListItem>
+            </Link>
+
+            <Link href="/services">
+              <ListItem button onClick={onDrawerClose}>
+                <ListItemIcon>
+                  <OfferIcon />
+                </ListItemIcon>
+                <ListItemText primary="Services" />
+              </ListItem>
+            </Link>
+
+            <Link href="/faqs">
+              <ListItem button onClick={onDrawerClose}>
+                <ListItemIcon>
+                  <HelpIcon />
+                </ListItemIcon>
+                <ListItemText primary="FAQs" />
+              </ListItem>
+            </Link>
+
+            <Link href="/privacy">
+              <ListItem button onClick={onDrawerClose}>
+                <ListItemIcon>
+                  <LockIcon />
+                </ListItemIcon>
+                <ListItemText primary="Privacy Policy" />
+              </ListItem>
+            </Link>
+          </List>
+
+          <Divider />
+
+          <div className={styles.spacer}></div>
+
+          <Divider />
+          <List>
+            <Link href="tel:708-261-2306">
+              <ListItem button>
+                <ListItemIcon>
+                  <PhoneIcon />
+                </ListItemIcon>
+                <ListItemText
+                  classes={smallListItemClasses}
+                  primary="708-261-2306"
+                />
+              </ListItem>
+            </Link>
+
+            <Link href="mailto:info@cleaningwithcooley.com">
+              <ListItem button>
+                <ListItemIcon>
+                  <EmailIcon />
+                </ListItemIcon>
+                <ListItemText
+                  classes={smallListItemClasses}
+                  primary="info@cleaningwithcooley.com"
+                />
+              </ListItem>
+            </Link>
+          </List>
+        </div>
       </SwipeableDrawer>
     </nav>
   )

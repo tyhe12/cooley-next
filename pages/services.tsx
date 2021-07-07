@@ -66,7 +66,7 @@ export default function Services() {
               className={styles.row}
               container
               item
-              justify="center"
+              justifyContent="center"
               xs={12}
             >
               <Grid xs={12} md={6} item>

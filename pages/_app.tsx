@@ -5,13 +5,13 @@ import {
   createStyles,
   makeStyles,
   ThemeProvider,
-  createMuiTheme,
+  createTheme,
 } from '@material-ui/core/styles'
 import NavBar from '../components/NavBar'
 import NavDrawer from '../components/NavDrawer'
 import Footer from '../components/Footer'
 
-const theme = createMuiTheme({
+const theme = createTheme({
   typography: {
     fontFamily: ['"Quicksand"', 'sans-serif'].join(','),
   },

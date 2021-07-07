@@ -4,8 +4,6 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import Button from '@material-ui/core/Button'
-// import Menu from '@material-ui/core/Menu'
-// import MenuItem from '@material-ui/core/MenuItem'
 import MenuIcon from '@material-ui/icons/Menu'
 import AccountIcon from '@material-ui/icons/AccountCircle'
 import Popover from '@material-ui/core/Popover'
@@ -13,7 +11,7 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-// import Fade from '@material-ui/core/Fade'
+import Link from 'next/link'
 
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles'
 
@@ -87,18 +85,26 @@ const NavBar: React.FC<Props> = (props: Props) => {
               <MenuIcon />
             </IconButton>
           </div>
-          <Typography variant="h6" color="inherit">
-            Cooley Logo
-          </Typography>
+          <Link href="/">
+            <Typography variant="h6" color="inherit">
+              Cooley Logo
+            </Typography>
+          </Link>
 
           <div className={styles.spacer}></div>
 
-          <Button className={styles.toolbarButton} color="inherit">
-            About
-          </Button>
-          <Button className={styles.toolbarButton} color="inherit">
-            Services
-          </Button>
+          <Link href="/about">
+            <Button className={styles.toolbarButton} color="inherit">
+              About
+            </Button>
+          </Link>
+
+          <Link href="/services">
+            <Button className={styles.toolbarButton} color="inherit">
+              Services
+            </Button>
+          </Link>
+
           <Button
             className={styles.toolbarButton}
             onClick={handleOpen}
@@ -126,17 +132,23 @@ const NavBar: React.FC<Props> = (props: Props) => {
             disableRestoreFocus
           >
             <List>
-              <ListItem button>
-                <ListItemText primary="Service Details" />
-              </ListItem>
+              <Link href="/included">
+                <ListItem button onClick={handleClose}>
+                  <ListItemText primary="Service Details" />
+                </ListItem>
+              </Link>
 
-              <ListItem button>
-                <ListItemText primary="FAQs" />
-              </ListItem>
+              <Link href="/faqs">
+                <ListItem button onClick={handleClose}>
+                  <ListItemText primary="FAQs" />
+                </ListItem>
+              </Link>
 
-              <ListItem button>
-                <ListItemText primary="Privacy Policy" />
-              </ListItem>
+              <Link href="/privacy">
+                <ListItem button onClick={handleClose}>
+                  <ListItemText primary="Privacy Policy" />
+                </ListItem>
+              </Link>
             </List>
           </Popover>
 

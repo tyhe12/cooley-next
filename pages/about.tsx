@@ -48,13 +48,25 @@ export default function About() {
       <main className={styles.main}>
         <Container>
           <Grid container>
-            <Grid className={styles.row} item xs={12} justify="center">
+            <Grid
+              className={styles.row}
+              container
+              item
+              xs={12}
+              justifyContent="center"
+            >
               <Typography align="center" variant="h4" component="h1">
                 WHO I AM
               </Typography>
             </Grid>
 
-            <Grid className={styles.row} item xs={12} justify="center">
+            <Grid
+              className={styles.row}
+              container
+              item
+              xs={12}
+              justifyContent="center"
+            >
               <div className={styles.avatarContainer}>
                 <Avatar></Avatar>
               </div>

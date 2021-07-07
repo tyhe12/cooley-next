@@ -86,7 +86,7 @@ export default function Home() {
           <Grid container>
             <Grid
               className={styles.row}
-              justify="center"
+              justifyContent="center"
               container
               item
               xs={12}
@@ -102,13 +102,13 @@ export default function Home() {
             </Grid>
 
             <Grid className={styles.row} container item xs={12}>
-              <Grid item xs={12} justify="center">
+              <Grid container item xs={12} justifyContent="center">
                 <Typography align="center" variant="h4" component="h2">
                   What is Cleaning With Cooley
                 </Typography>
               </Grid>
 
-              <Grid container item xs={12} justify="center">
+              <Grid container item xs={12} justifyContent="center">
                 <Card className={styles.card}>
                   <CardContent>
                     <div className={styles.cardTitle}>
@@ -175,13 +175,13 @@ export default function Home() {
             </Grid>
 
             <Grid className={styles.row} container item xs={12}>
-              <Grid container justify="center">
+              <Grid container justifyContent="center">
                 <Typography align="center" variant="h4" component="h2">
                   Why Clean With Cooley
                 </Typography>
               </Grid>
 
-              <Grid container justify="center">
+              <Grid container justifyContent="center">
                 <Card className={styles.card}>
                   <CardContent>
                     <div className={styles.cardTitle}>
@@ -220,7 +220,7 @@ export default function Home() {
                 </Card>
               </Grid>
 
-              <Grid container justify="center">
+              <Grid container justifyContent="center">
                 <Card className={styles.card}>
                   <CardContent>
                     <div className={styles.cardTitle}>
@@ -268,13 +268,13 @@ export default function Home() {
             </Grid>
 
             <Grid className={styles.row} item xs={12}>
-              <Grid item xs={12} justify="center">
+              <Grid container item xs={12} justifyContent="center">
                 <Typography align="center" variant="h4" component="h2">
                   Royalty Program
                 </Typography>
               </Grid>
 
-              <Grid container item xs={12} justify="center">
+              <Grid container item xs={12} justifyContent="center">
                 <Card className={styles.card}>
                   <CardContent>
                     <div className={styles.cardTitle}>
@@ -338,7 +338,7 @@ export default function Home() {
             <Grid
               className={styles.row}
               container
-              justify="center"
+              justifyContent="center"
               item
               xs={12}
             >
