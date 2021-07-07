@@ -4,6 +4,7 @@ import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import Avatar from '@material-ui/core/Avatar'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
+import React from 'react'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -35,7 +36,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-export default function About() {
+const About: React.FunctionComponent = () => {
   const styles = useStyles()
   return (
     <div>
@@ -113,3 +114,5 @@ export default function About() {
     </div>
   )
 }
+
+export default About

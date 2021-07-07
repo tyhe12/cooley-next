@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent'
 import Image from 'next/image'
 import imagesrc from '../public/testimage.jpg'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
+import React from 'react'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -46,7 +47,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-export default function Included() {
+const Included: React.FunctionComponent = () => {
   const styles = useStyles()
   return (
     <div>
@@ -182,3 +183,5 @@ export default function Included() {
     </div>
   )
 }
+
+export default Included

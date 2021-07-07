@@ -8,6 +8,7 @@ import InstagramIcon from '@material-ui/icons/Instagram'
 import TwitterIcon from '@material-ui/icons/Twitter'
 import PhoneIcon from '@material-ui/icons/Phone'
 import EmailIcon from '@material-ui/icons/Email'
+import Link from 'next/link'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -78,7 +79,9 @@ const Footer: React.FC = () => {
       </div>
 
       <div className={styles.actionsContainer}>
-        <Button className={styles.actionButton}>Privacy Policy</Button>
+        <Link href="/privacy">
+          <Button className={styles.actionButton}>Privacy Policy</Button>
+        </Link>
 
         <Typography variant="body2">
           Copyright © 2018-2021, Cleaning with Cooley. All Rights Reserved.

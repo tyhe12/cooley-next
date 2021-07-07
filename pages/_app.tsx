@@ -48,7 +48,7 @@ const useStyles = makeStyles(() =>
   })
 )
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   const styles = useStyles()
   const [openNavDrawer, setOpenNavDrawer] = useState(false)
 

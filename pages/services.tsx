@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { useState } from 'react'
+import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
 import Tabs from '@material-ui/core/Tabs'
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-export default function Services() {
+const Services: React.FunctionComponent = () => {
   const styles = useStyles()
   const [tabValue, setTabValue] = useState(0)
 
@@ -86,3 +87,5 @@ export default function Services() {
     </div>
   )
 }
+
+export default Services

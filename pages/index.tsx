@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Icon from '@material-ui/core/Icon'
-
+import React from 'react'
 import Carousel from '../components/Carousel'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 
@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-export default function Home() {
+const Home: React.FunctionComponent = () => {
   const styles = useStyles()
   return (
     <div className={styles.container}>
@@ -366,3 +366,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home

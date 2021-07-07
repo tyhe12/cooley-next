@@ -1,3 +1,4 @@
+import React from 'react'
 import Head from 'next/head'
 import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
@@ -31,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-export default function About() {
+const Privacy: React.FunctionComponent = () => {
   const styles = useStyles()
   return (
     <div>
@@ -289,3 +290,5 @@ export default function About() {
     </div>
   )
 }
+
+export default Privacy
