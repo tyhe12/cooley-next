@@ -12,9 +12,9 @@ import InfoIcon from '@material-ui/icons/Info'
 import OfferIcon from '@material-ui/icons/LocalOffer'
 import HelpIcon from '@material-ui/icons/Help'
 import LockIcon from '@material-ui/icons/Lock'
-import Link from 'next/link'
 import PhoneIcon from '@material-ui/icons/Phone'
 import EmailIcon from '@material-ui/icons/Email'
+import Link from 'next/link'
 
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles'
 

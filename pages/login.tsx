@@ -12,6 +12,8 @@ import * as yup from 'yup'
 import Typography from '@material-ui/core/Typography'
 import Link from 'next/link'
 import LinkContainer from '@material-ui/core/Link'
+import Icon from '@material-ui/core/Icon'
+import IconButton from '@material-ui/core/IconButton'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -46,6 +48,14 @@ const useStyles = makeStyles((theme: Theme) =>
     signupLink: {
       marginLeft: theme.spacing(0.5),
       marginRight: theme.spacing(0.5),
+    },
+    socials: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    socialIcon: {
+      marginLeft: theme.spacing(4),
+      marginRight: theme.spacing(4),
     },
   })
 )
@@ -185,6 +195,18 @@ const Login: React.FC = () => {
               </Button>
             </div>
           </form>
+
+          <div className={styles.socials}>
+            <IconButton className={styles.socialIcon}>
+              <Icon className="fab fa-google" color="primary" />
+            </IconButton>
+            <IconButton className={styles.socialIcon}>
+              <Icon className="fab fa-facebook" color="primary" />
+            </IconButton>
+            <IconButton className={styles.socialIcon}>
+              <Icon className="fab fa-apple" color="primary" />
+            </IconButton>
+          </div>
         </Container>
       </main>
     </div>
