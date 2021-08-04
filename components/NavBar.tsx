@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     toolbar: {
       position: 'relative',
-      // alignItems: 'stretch',
     },
     menuButton: {
       marginRight: theme.spacing(2),
@@ -45,7 +44,7 @@ const useStyles = makeStyles((theme: Theme) =>
       top: '65px !important',
     },
     toolbarButton: {
-      // height: 'inherit',
+      boxSizing: 'content-box',
       paddingLeft: theme.spacing(2),
       paddingRight: theme.spacing(2),
     },
@@ -153,7 +152,7 @@ const NavBar: React.FC<Props> = (props: Props) => {
           </Popover>
 
           <IconButton className={styles.accountButton}>
-            <AccountIcon />
+            <AccountIcon fontSize="large" />
           </IconButton>
         </Toolbar>
       </AppBar>
