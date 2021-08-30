@@ -50,6 +50,10 @@ const useStyles = makeStyles((theme: Theme) =>
       fontWeight: 'bold',
       marginBottom: theme.spacing(2),
     },
+    contactRow: {
+      marginTop: theme.spacing(12),
+      marginBottom: theme.spacing(12),
+    },
   })
 )
 
@@ -71,10 +75,10 @@ const Home: React.FunctionComponent = () => {
           <div className={`${styles.slide} ${styles.slide2}`}>slide n°4</div>
           <div className={`${styles.slide} ${styles.slide3}`}>slide n°5</div>
         </Carousel>
-        <Container>
+        <Container maxWidth="xl">
           <Grid container>
             <Grid
-              className={styles.row}
+              className={`${styles.row} ${styles.contactRow}`}
               justifyContent="center"
               container
               item

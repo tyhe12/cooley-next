@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginRight: theme.spacing(2),
       marginBottom: theme.spacing(2),
       marginTop: theme.spacing(2),
+      paddingBottom: theme.spacing(1),
     },
     cardTitleContainer: {
       display: 'flex',
@@ -26,7 +27,6 @@ const useStyles = makeStyles((theme: Theme) =>
       fontWeight: 'bold',
     },
     cardIcon: {
-      marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
       width: 'auto',
     },
