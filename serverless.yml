@@ -1,8 +1,13 @@
 CooleyNext:
-  component: "@sls-next/serverless-component@1.19"
+  component: "@sls-next/serverless-component"
   inputs:
     bucketName: 'cooley-assets'
     bucketRegion: 'us-east-2'
     # domain: 'cleaningwithcooley.com'
     # cloudfront:
     #   distributionId: 'E31LUZRV95T20P'
+
+resources:
+  Resources:
+    CognitoUserPool:
+      Type: AWS::Cognito::UserPool
