@@ -54,6 +54,10 @@ const useStyles = makeStyles((theme: Theme) =>
     text: {
       fontSize: '0.875rem',
     },
+    listItemIcon: {
+      minWidth: 0,
+      marginRight: theme.spacing(2),
+    },
   })
 )
 
@@ -89,7 +93,7 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
           <List>
             <Link href="/">
               <ListItem button onClick={onDrawerClose}>
-                <ListItemIcon>
+                <ListItemIcon className={styles.listItemIcon}>
                   <HomeIcon />
                 </ListItemIcon>
                 <ListItemText primary="Home" />
@@ -98,7 +102,7 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
 
             <Link href="/profile">
               <ListItem button onClick={onDrawerClose}>
-                <ListItemIcon>
+                <ListItemIcon className={styles.listItemIcon}>
                   <AccountIcon />
                 </ListItemIcon>
                 <ListItemText primary="Profile" />
@@ -107,7 +111,7 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
 
             <Link href="/about">
               <ListItem button onClick={onDrawerClose}>
-                <ListItemIcon>
+                <ListItemIcon className={styles.listItemIcon}>
                   <InfoIcon />
                 </ListItemIcon>
                 <ListItemText primary="About" />
@@ -116,7 +120,7 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
 
             <Link href="/services">
               <ListItem button onClick={onDrawerClose}>
-                <ListItemIcon>
+                <ListItemIcon className={styles.listItemIcon}>
                   <OfferIcon />
                 </ListItemIcon>
                 <ListItemText primary="Services" />
@@ -125,7 +129,7 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
 
             <Link href="/faqs">
               <ListItem button onClick={onDrawerClose}>
-                <ListItemIcon>
+                <ListItemIcon className={styles.listItemIcon}>
                   <HelpIcon />
                 </ListItemIcon>
                 <ListItemText primary="FAQs" />
@@ -134,7 +138,7 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
 
             <Link href="/privacy">
               <ListItem button onClick={onDrawerClose}>
-                <ListItemIcon>
+                <ListItemIcon className={styles.listItemIcon}>
                   <LockIcon />
                 </ListItemIcon>
                 <ListItemText primary="Privacy Policy" />
@@ -150,7 +154,7 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
           <List>
             <Link href="tel:708-261-2306">
               <ListItem button>
-                <ListItemIcon>
+                <ListItemIcon className={styles.listItemIcon}>
                   <PhoneIcon />
                 </ListItemIcon>
                 <ListItemText
@@ -162,7 +166,7 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
 
             <Link href="mailto:info@cleaningwithcooley.com">
               <ListItem button>
-                <ListItemIcon>
+                <ListItemIcon className={styles.listItemIcon}>
                   <EmailIcon />
                 </ListItemIcon>
                 <ListItemText

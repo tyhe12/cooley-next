@@ -1,6 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { NextApiRequest, NextApiResponse } from 'next'
 
+// faq: {
+//   title: 'string',
+//   text: 'string',
+// }
+
 const contents = [
   {
     title: 'Are you insured?',

@@ -25,6 +25,10 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
       paddingTop: theme.spacing(1),
     },
+    avatarRow: {
+      marginTop: theme.spacing(4),
+      marginBottom: theme.spacing(4),
+    },
     row: {
       marginBottom: theme.spacing(8),
     },
@@ -108,7 +112,7 @@ const Profile: React.FC = () => {
       <main className={styles.main}>
         <Container>
           <Grid container justifyContent="center">
-            <Grid className={styles.row} item xs={12}>
+            <Grid className={styles.avatarRow} item xs={12}>
               <Avatar></Avatar>
               <Typography>Welcome, {account.name}</Typography>
             </Grid>

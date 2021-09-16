@@ -9,6 +9,13 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: theme.spacing(1),
       paddingTop: theme.spacing(3),
       paddingBottom: theme.spacing(3),
+      height: 140,
+    },
+    cardContent: {
+      display: 'flex',
+      flexDirection: 'column',
+      height: '100%',
+      justifyContent: 'center',
     },
   })
 )
@@ -35,7 +42,7 @@ const ServiceCard: React.FC<Props> = (props: Props) => {
         raised={hover}
         className={styles.card}
       >
-        <CardContent>{children}</CardContent>
+        <CardContent className={styles.cardContent}>{children}</CardContent>
       </Card>
     </>
   )

@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import { useState } from 'react'
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
 import Tabs from '@material-ui/core/Tabs'
@@ -31,9 +31,35 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
+const mapElement = (service) => {
+  const { key, title, subtitle } = service
+  return (
+    <Grid key={key} xs={12} md={6} item>
+      <ServiceCard>
+        <Typography variant="h6">{title}</Typography>
+        {subtitle && <Typography variant="subtitle1">{subtitle}</Typography>}
+      </ServiceCard>
+    </Grid>
+  )
+}
+
 const Services: React.FunctionComponent = () => {
   const styles = useStyles()
   const [tabValue, setTabValue] = useState(0)
+  const [contents, setContents] = useState({ services: [], addons: [] })
+
+  useEffect(() => {
+    axios.get('/api/services').then((response) => {
+      const { data } = response
+      setContents(data)
+    })
+  }, [])
+
+  const { services = [], addons = [] } = contents
+  const servicesElements = services.map(mapElement)
+  const addonsElements = addons.map(mapElement)
+
+  const tabContents = tabValue === 0 ? servicesElements : addonsElements
 
   const handleChange = (e, value) => {
     setTabValue(value)
@@ -70,16 +96,7 @@ const Services: React.FunctionComponent = () => {
               justifyContent="center"
               xs={12}
             >
-              <Grid xs={12} md={6} item>
-                <ServiceCard>
-                  <Typography>Studio/One Bedroom</Typography>
-                </ServiceCard>
-              </Grid>
-              <Grid xs={12} md={6} item>
-                <ServiceCard>
-                  <Typography>Two Bedroom</Typography>
-                </ServiceCard>
-              </Grid>
+              {tabContents}
             </Grid>
           </Grid>
         </Container>
