@@ -5,9 +5,9 @@ import Typography from '@material-ui/core/Typography'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Image from 'next/image'
-import imagesrc from '../public/testimage.jpg'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -33,8 +33,18 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     cardRoot: {
       display: 'flex',
+      justifyContent: 'center',
+      height: 200,
     },
-    cardDetails: {},
+    imageContainer: {
+      height: 200,
+      width: 200,
+    },
+    cardDetails: {
+      width: '100%',
+      marginTop: theme.spacing(2),
+      marginBottom: theme.spacing(2),
+    },
     cardContent: {
       marginLeft: theme.spacing(4),
     },
@@ -48,7 +58,46 @@ const useStyles = makeStyles((theme: Theme) =>
 )
 
 const Included: React.FunctionComponent = () => {
+  const [contents, setContents] = useState([])
+  useEffect(() => {
+    axios.get('/api/details').then((response) => {
+      const { data } = response
+      setContents(data)
+    })
+  }, [])
   const styles = useStyles()
+
+  const rows = contents.map((row) => {
+    const { key, img, imgTitle, title, description } = row
+    return (
+      <Grid key={key} className={styles.row} item xs={12}>
+        <Card className={styles.cardRoot}>
+          <div className={styles.imageContainer}>
+            <Image
+              layout="fixed"
+              className={styles.cardImage}
+              src={img}
+              width={200}
+              height={200}
+              alt={imgTitle}
+            />
+          </div>
+          <div className={styles.cardDetails}>
+            <CardContent className={styles.cardContent}>
+              <Typography
+                className={styles.cardTitle}
+                component="h5"
+                variant="h5"
+              >
+                {title}
+              </Typography>
+              <Typography color="textSecondary">{description}</Typography>
+            </CardContent>
+          </div>
+        </Card>
+      </Grid>
+    )
+  })
   return (
     <div>
       <Head>
@@ -66,117 +115,7 @@ const Included: React.FunctionComponent = () => {
               </Typography>
             </Grid>
 
-            <Grid className={styles.row} item xs={12}>
-              <Card className={styles.cardRoot}>
-                <Image
-                  className={styles.cardImage}
-                  src={imagesrc}
-                  width={200}
-                  height={200}
-                  alt="Image Title"
-                />
-                <div className={styles.cardDetails}>
-                  <CardContent className={styles.cardContent}>
-                    <Typography
-                      className={styles.cardTitle}
-                      component="h5"
-                      variant="h5"
-                    >
-                      Bedrooms &amp; Living Room
-                    </Typography>
-                    <Typography color="textSecondary">
-                      General tidying up, mirrors cleaned, make bed (change
-                      linen by request). Dust all accessible surfaces also wipe
-                      and clean window sills.
-                    </Typography>
-                  </CardContent>
-                </div>
-              </Card>
-            </Grid>
-
-            <Grid className={styles.row} item xs={12}>
-              <Card className={styles.cardRoot}>
-                <Image
-                  className={styles.cardImage}
-                  src={imagesrc}
-                  width={200}
-                  height={200}
-                  alt="Image Title"
-                />
-                <div className={styles.cardDetails}>
-                  <CardContent className={styles.cardContent}>
-                    <Typography
-                      className={styles.cardTitle}
-                      component="h5"
-                      variant="h5"
-                    >
-                      Bedrooms &amp; Living Room
-                    </Typography>
-                    <Typography color="textSecondary">
-                      General tidying up, mirrors cleaned, make bed (change
-                      linen by request). Dust all accessible surfaces also wipe
-                      and clean window sills.
-                    </Typography>
-                  </CardContent>
-                </div>
-              </Card>
-            </Grid>
-
-            <Grid className={styles.row} item xs={12}>
-              <Card className={styles.cardRoot}>
-                <Image
-                  className={styles.cardImage}
-                  src={imagesrc}
-                  width={200}
-                  height={200}
-                  alt="Image Title"
-                />
-                <div className={styles.cardDetails}>
-                  <CardContent className={styles.cardContent}>
-                    <Typography
-                      className={styles.cardTitle}
-                      component="h5"
-                      variant="h5"
-                    >
-                      Bedrooms &amp; Living Room
-                    </Typography>
-                    <Typography color="textSecondary">
-                      General tidying up, mirrors cleaned, make bed (change
-                      linen by request). Dust all accessible surfaces also wipe
-                      and clean window sills.
-                    </Typography>
-                  </CardContent>
-                </div>
-              </Card>
-            </Grid>
-
-            <Grid className={styles.row} item xs={12}>
-              <Card className={styles.cardRoot}>
-                <Image
-                  className={styles.cardImage}
-                  src={imagesrc}
-                  width={200}
-                  height={200}
-                  alt="Image Title"
-                />
-                <div className={styles.cardDetails}>
-                  <CardContent className={styles.cardContent}>
-                    <Typography
-                      className={styles.cardTitle}
-                      component="h5"
-                      variant="h5"
-                    >
-                      Bedrooms &amp; Living Room
-                    </Typography>
-                    <Typography color="textSecondary">
-                      General tidying up, mirrors cleaned, make bed (change
-                      linen by request). Dust all accessible surfaces also wipe
-                      and clean window sills.
-                    </Typography>
-                  </CardContent>
-                </div>
-              </Card>
-            </Grid>
+            {rows}
           </Grid>
         </Container>
       </main>

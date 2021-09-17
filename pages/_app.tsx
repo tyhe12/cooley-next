@@ -37,9 +37,12 @@ const useStyles = makeStyles(() =>
   createStyles({
     appContainer: {
       width: '100%',
+      height: '100%',
     },
     mainContent: {
       width: '100%',
+      height: '100%',
+      minHeight: '90vh',
     },
     navDrawer: {
       width: navDrawerWidth,
@@ -71,11 +74,11 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
             onDrawerOpen={onNavDrawerOpen}
           />
         </div>
+        <NavBar onClickMenu={onNavDrawerOpen} />
         <div className={styles.mainContent}>
-          <NavBar onClickMenu={onNavDrawerOpen} />
           <Component {...pageProps} />
-          <Footer />
         </div>
+        <Footer />
       </div>
     </ThemeProvider>
   )
