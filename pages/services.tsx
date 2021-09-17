@@ -47,7 +47,7 @@ const mapElement = (service) => {
 //   return (
 //     <Grid key={idx} xs={12} md={6} item>
 //       <ServiceCard>
-        
+
 //       </ServiceCard>
 //     </Grid>
 //   )
@@ -55,7 +55,7 @@ const mapElement = (service) => {
 
 const Services: React.FunctionComponent = () => {
   const styles = useStyles()
-  const [ready, setReady] = useState(false)
+  // const [ready, setReady] = useState(false)
   const [tabValue, setTabValue] = useState(0)
   const [contents, setContents] = useState({ services: [], addons: [] })
 
@@ -63,7 +63,7 @@ const Services: React.FunctionComponent = () => {
     axios.get('/api/services').then((response) => {
       const { data } = response
       setContents(data)
-      setReady(true)
+      // setReady(true)
     })
   }, [])
 
