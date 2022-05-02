@@ -9,6 +9,8 @@ import TwitterIcon from '@material-ui/icons/Twitter'
 import PhoneIcon from '@material-ui/icons/Phone'
 import EmailIcon from '@material-ui/icons/Email'
 import Link from 'next/link'
+import Image from 'next/image'
+import LogoRound from '../public/images/logo_round.png'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -22,6 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
       marginTop: theme.spacing(8),
       justifyContent: 'center',
+      height: 100,
     },
     socialsContainer: {
       display: 'flex',
@@ -45,37 +48,55 @@ const useStyles = makeStyles((theme: Theme) =>
     icon: {
       fill: 'white',
     },
+    logo: {
+      marginTop: theme.spacing(4),
+      height: 100,
+      width: 100,
+    },
   })
 )
+const PHONE_NUMBER = '312-820-4947'
 
 const Footer: React.FC = () => {
   const styles = useStyles()
   return (
     <footer className={styles.footer} color="secondary">
       <div className={styles.logoContainer}>
-        <Typography>Cooley Logo</Typography>
+        <div className={styles.logo}>
+          <Image src={LogoRound} alt="Logo" />
+        </div>
       </div>
 
       <div className={styles.socialsContainer}>
-        <IconButton>
-          <FacebookIcon className={styles.icon} />
-        </IconButton>
+        <Link href="https://www.facebook.com/CleaningwithCooley">
+          <IconButton>
+            <FacebookIcon className={styles.icon} />
+          </IconButton>
+        </Link>
 
-        <IconButton>
-          <InstagramIcon className={styles.icon} />
-        </IconButton>
+        <Link href="https://www.instagram.com/cleaningwithcooley/">
+          <IconButton>
+            <InstagramIcon className={styles.icon} />
+          </IconButton>
+        </Link>
 
-        <IconButton>
-          <TwitterIcon className={styles.icon} />
-        </IconButton>
+        <Link href="https://twitter.com/CleaningwCooley">
+          <IconButton>
+            <TwitterIcon className={styles.icon} />
+          </IconButton>
+        </Link>
 
-        <IconButton>
-          <PhoneIcon className={styles.icon} />
-        </IconButton>
+        <Link href={`tel:${PHONE_NUMBER}`}>
+          <IconButton>
+            <PhoneIcon className={styles.icon} />
+          </IconButton>
+        </Link>
 
-        <IconButton>
-          <EmailIcon className={styles.icon} />
-        </IconButton>
+        <Link href="mailto:info@cleaningwithcooley.com">
+          <IconButton>
+            <EmailIcon className={styles.icon} />
+          </IconButton>
+        </Link>
       </div>
 
       <div className={styles.actionsContainer}>
@@ -84,7 +105,7 @@ const Footer: React.FC = () => {
         </Link>
 
         <Typography variant="body2">
-          Copyright © 2018-2021, Cleaning with Cooley. All Rights Reserved.
+          © 2019, Cleaning with Cooley. All Rights Reserved.
         </Typography>
       </div>
     </footer>

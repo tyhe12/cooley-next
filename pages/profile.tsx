@@ -71,6 +71,8 @@ const schemas = {
   phone: phoneSchema,
 }
 
+const HAS_LOGIN = false
+
 const Profile: React.FC = () => {
   const styles = useStyles()
   const [account, setAccount] = useState({
@@ -101,6 +103,11 @@ const Profile: React.FC = () => {
       setAccount((prev) => ({ ...prev, [field]: event.target.value }))
     }
   }
+
+  if (HAS_LOGIN) {
+    return <div>Invalid Page</div>
+  }
+
   return (
     <div>
       <Head>

@@ -8,6 +8,12 @@ import Carousel from '../components/Carousel'
 import HomeCard from '../components/HomeCard'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 import Link from 'next/link'
+import Image from 'next/image'
+import BondedImage from '../public/images/bonded.png'
+import CarouselImage1 from '../public/images/carousel_1.jpg'
+import CarouselImage2 from '../public/images/carousel_2.jpg'
+import CarouselImage3 from '../public/images/carousel_3.jpg'
+import CarouselImage4 from '../public/images/carousel_4.jpg'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,18 +29,11 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
     },
     slide: {
-      padding: 15,
-      minHeight: 600,
-      color: '#fff',
-    },
-    slide1: {
-      backgroundColor: '#FEA900',
-    },
-    slide2: {
-      backgroundColor: '#B3DC4A',
-    },
-    slide3: {
-      backgroundColor: '#6AC0FF',
+      // padding: 15,
+      height: 600,
+      width: '100%',
+      overflow: 'hidden',
+      // color: '#fff',
     },
     row: {
       marginBottom: theme.spacing(8),
@@ -54,8 +53,29 @@ const useStyles = makeStyles((theme: Theme) =>
       marginTop: theme.spacing(12),
       marginBottom: theme.spacing(12),
     },
+    badgeImage: {
+      width: 150,
+      height: 150,
+      cursor: 'pointer',
+      marginLeft: theme.spacing(2),
+      marginRight: theme.spacing(2),
+    },
+    bondedImage: {
+      width: 150,
+      height: 150,
+      marginLeft: theme.spacing(2),
+      marginRight: theme.spacing(2),
+    },
   })
 )
+
+const PHONE_NUMBER = '312-820-4947'
+const CarouselImages = [
+  CarouselImage1,
+  CarouselImage2,
+  CarouselImage3,
+  CarouselImage4,
+]
 
 const Home: React.FunctionComponent = () => {
   const styles = useStyles()
@@ -69,11 +89,13 @@ const Home: React.FunctionComponent = () => {
 
       <main className={styles.main}>
         <Carousel>
-          <div className={`${styles.slide} ${styles.slide1}`}>slide n°1</div>
-          <div className={`${styles.slide} ${styles.slide2}`}>slide n°2</div>
-          <div className={`${styles.slide} ${styles.slide3}`}>slide n°3</div>
-          <div className={`${styles.slide} ${styles.slide2}`}>slide n°4</div>
-          <div className={`${styles.slide} ${styles.slide3}`}>slide n°5</div>
+          {CarouselImages.map((img, idx) => {
+            return (
+              <div key={idx} className={styles.slide}>
+                <Image src={img} alt={`carousel-image-${idx}`} />
+              </div>
+            )
+          })}
         </Carousel>
         <Container maxWidth="xl">
           <Grid container>
@@ -84,7 +106,7 @@ const Home: React.FunctionComponent = () => {
               item
               xs={12}
             >
-              <Link href="tel:708-261-2306">
+              <Link href={`tel:${PHONE_NUMBER}`}>
                 <Button
                   className={styles.largeButton}
                   variant="contained"
@@ -188,42 +210,6 @@ const Home: React.FunctionComponent = () => {
               </Grid>
             </Grid>
 
-            <Grid className={styles.row} item xs={12}>
-              <Grid container item xs={12} justifyContent="center">
-                <Typography
-                  className={styles.title}
-                  align="center"
-                  variant="h5"
-                  component="h2"
-                >
-                  Royalty Program
-                </Typography>
-              </Grid>
-
-              <Grid container item xs={12} justifyContent="center">
-                <HomeCard title="New Customer" icon="fas fa-gift">
-                  We love to welcome new clients with open arms. New customers
-                  will receive exclusive promotions!
-                </HomeCard>
-
-                <HomeCard
-                  title="Referral Incentives"
-                  icon="fas fa-user-friends"
-                >
-                  We value all our clients and want to show our appreciation!
-                  Refer someone to our services and you’ll receive 25% off your
-                  next clean (following your referral clean). Your referral will
-                  receive 20% off their 1st initial clean!
-                </HomeCard>
-
-                <HomeCard title="Free Clean" icon="fas fa-broom">
-                  Refer 3 friends, family, neighbor or colleagues for a clean
-                  and you’ll get your next clean for free (following your
-                  referral clean).
-                </HomeCard>
-              </Grid>
-            </Grid>
-
             <Grid
               className={styles.row}
               container
@@ -241,7 +227,7 @@ const Home: React.FunctionComponent = () => {
                   <Typography variant="h6">Check Out Our Services</Typography>
                 </Button>
               </Link>
-              <Link href="tel:708-261-2306">
+              <Link href={`tel:${PHONE_NUMBER}`}>
                 <Button
                   className={styles.largeButton}
                   variant="contained"
@@ -253,6 +239,26 @@ const Home: React.FunctionComponent = () => {
                   </Typography>
                 </Button>
               </Link>
+            </Grid>
+
+            <Grid
+              className={styles.row}
+              container
+              justifyContent="center"
+              item
+              xs={12}
+            >
+              <Link href="https://www.chamberofcommerce.com/united-states/illinois/chicago/house-cleaning-service/2012861231-cleaning-with-cooley?source=memberwebsite">
+                <div className={styles.badgeImage}>
+                  <img
+                    src="https://coc.codes/images/badge/2012861231"
+                    alt="COCBadge"
+                  />
+                </div>
+              </Link>
+              <div className={styles.bondedImage}>
+                <Image src={BondedImage} alt="Liscenced and Bonded" />
+              </div>
             </Grid>
           </Grid>
         </Container>

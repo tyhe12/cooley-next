@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
+import Image from 'next/image'
 import IconButton from '@material-ui/core/IconButton'
 import Button from '@material-ui/core/Button'
 import MenuIcon from '@material-ui/icons/Menu'
-import AccountIcon from '@material-ui/icons/AccountCircle'
 import Popover from '@material-ui/core/Popover'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Link from 'next/link'
+import LogoImage from '../public/images/logo_main.png'
 
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles'
 
@@ -47,6 +47,13 @@ const useStyles = makeStyles((theme: Theme) =>
       boxSizing: 'content-box',
       paddingLeft: theme.spacing(2),
       paddingRight: theme.spacing(2),
+    },
+    imageContainer: {
+      height: 230,
+      width: 45,
+    },
+    logoLink: {
+      cursor: 'pointer',
     },
   })
 )
@@ -84,11 +91,18 @@ const NavBar: React.FC<Props> = (props: Props) => {
               <MenuIcon />
             </IconButton>
           </div>
-          <Link href="/">
-            <Typography variant="h6" color="inherit">
-              Cooley Logo
-            </Typography>
-          </Link>
+          <div className={styles.logoLink}>
+            <Link href="/">
+              <Image
+                layout="intrinsic"
+                className={styles.imageContainer}
+                src={LogoImage}
+                width={230}
+                height={45}
+                alt="Logo"
+              />
+            </Link>
+          </div>
 
           <div className={styles.spacer}></div>
 
@@ -150,10 +164,6 @@ const NavBar: React.FC<Props> = (props: Props) => {
               </Link>
             </List>
           </Popover>
-
-          <IconButton className={styles.accountButton}>
-            <AccountIcon fontSize="large" />
-          </IconButton>
         </Toolbar>
       </AppBar>
     </>

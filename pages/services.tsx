@@ -1,6 +1,5 @@
 import Head from 'next/head'
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
 import Tabs from '@material-ui/core/Tabs'
@@ -43,6 +42,98 @@ const mapElement = (service) => {
   )
 }
 
+const ServicesConstant = {
+  services: [
+    {
+      key: 'one-bed',
+      title: 'Studio/One Bedroom',
+      subtitle: '',
+    },
+    {
+      key: 'two-bed',
+      title: 'Two Bedroom',
+      subtitle: '',
+    },
+    {
+      key: 'three-bed',
+      title: 'Three Bedroom',
+      subtitle: '',
+    },
+    {
+      key: 'house',
+      title: 'House Clean',
+      subtitle: '',
+    },
+    {
+      key: 'commercial',
+      title: 'Commercial Clean',
+      subtitle: '',
+    },
+    {
+      key: 'event',
+      title: 'Special Event Clean',
+      subtitle: '',
+    },
+    {
+      key: 'airbnb',
+      title: 'Airbnb Turnover Clean',
+      subtitle: '',
+    },
+    {
+      key: 'condo',
+      title: 'Condo Association Clean',
+      subtitle: '',
+    },
+    {
+      key: 'move',
+      title: 'Move In/Out Clean',
+      subtitle: '',
+    },
+    {
+      key: 'room',
+      title: 'Individual Room Clean',
+      subtitle: '',
+    },
+    {
+      key: 'salon',
+      title: 'Beauty/Barber Shops',
+      subtitle: '',
+    },
+  ],
+  addons: [
+    {
+      key: 'window',
+      title: 'Interior Window Clean',
+      subtitle: '',
+    },
+    {
+      key: 'fridge',
+      title: 'Interior Refrigerator Clean',
+      subtitle: '',
+    },
+    {
+      key: 'oven',
+      title: 'Interior Oven Clean',
+      subtitle: '',
+    },
+    {
+      key: 'laundry',
+      title: 'Laundry - Wash, Dry & Fold',
+      subtitle: '',
+    },
+    {
+      key: 'closet',
+      title: 'General Closet Organization',
+      subtitle: '',
+    },
+    {
+      key: 'cabinet',
+      title: 'General Kitchen Organization',
+      subtitle: '',
+    },
+  ],
+}
+
 // const createSkeleton = (val, idx) => {
 //   return (
 //     <Grid key={idx} xs={12} md={6} item>
@@ -55,23 +146,9 @@ const mapElement = (service) => {
 
 const Services: React.FunctionComponent = () => {
   const styles = useStyles()
-  // const [ready, setReady] = useState(false)
   const [tabValue, setTabValue] = useState(0)
-  const [contents, setContents] = useState({ services: [], addons: [] })
 
-  useEffect(() => {
-    axios.get('/api/services').then((response) => {
-      const { data } = response
-      setContents(data)
-      // setReady(true)
-    })
-  }, [])
-
-  // if (!ready) {
-
-  // }
-
-  const { services = [], addons = [] } = contents
+  const { services = [], addons = [] } = ServicesConstant
   const servicesElements = services.map(mapElement)
   const addonsElements = addons.map(mapElement)
 

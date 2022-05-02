@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography'
 import Avatar from '@material-ui/core/Avatar'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 import React from 'react'
+import HeadshotImage from '../public/images/headshot.png'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -32,6 +33,10 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     block: {
       display: 'block',
+    },
+    avatar: {
+      width: 200,
+      height: 200,
     },
   })
 )
@@ -69,7 +74,11 @@ const About: React.FunctionComponent = () => {
               justifyContent="center"
             >
               <div className={styles.avatarContainer}>
-                <Avatar></Avatar>
+                <Avatar
+                  src={HeadshotImage.src}
+                  alt="Tracy Cooley"
+                  className={styles.avatar}
+                />
               </div>
             </Grid>
 

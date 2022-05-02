@@ -2085,6 +2085,11 @@ ms@2.1.2:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
+mui-image@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/mui-image/-/mui-image-1.0.4.tgz#98fd365efedd30933bc90405a49d945afec270f1"
+  integrity sha512-X2MdelRdzEE8KWCmCpUHEm37VgsfcaEN1+AdOgJ4N1AwGu7RAb7Kf1W7Zgy0XuogVOoC1ULHtuSgjGghEh9NrQ==
+
 nanoclone@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/nanoclone/-/nanoclone-0.2.1.tgz#dd4090f8f1a110d26bb32c49ed2f5b9235209ed4"

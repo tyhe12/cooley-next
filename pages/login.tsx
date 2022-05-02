@@ -70,6 +70,8 @@ const passwordSchema = yup
   .required('Password is required')
   .min(8, 'Password should be of minimum ${min} characters length')
 
+const HAS_LOGIN = false
+
 const Login: React.FC = () => {
   const styles = useStyles()
   const [email, setEmail] = useState('')
@@ -103,6 +105,10 @@ const Login: React.FC = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     validateForm()
+  }
+
+  if (HAS_LOGIN) {
+    return <div>Invalid Page</div>
   }
 
   return (

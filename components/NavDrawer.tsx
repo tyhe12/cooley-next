@@ -5,9 +5,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import Divider from '@material-ui/core/Divider'
-import Typography from '@material-ui/core/Typography'
 import HomeIcon from '@material-ui/icons/Home'
-import AccountIcon from '@material-ui/icons/AccountCircle'
 import InfoIcon from '@material-ui/icons/Info'
 import OfferIcon from '@material-ui/icons/LocalOffer'
 import HelpIcon from '@material-ui/icons/Help'
@@ -15,6 +13,8 @@ import LockIcon from '@material-ui/icons/Lock'
 import PhoneIcon from '@material-ui/icons/Phone'
 import EmailIcon from '@material-ui/icons/Email'
 import Link from 'next/link'
+import Image from 'next/image'
+import LogoImage from '../public/images/logo_main.png'
 
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles'
 
@@ -24,6 +24,8 @@ export interface Props {
   onDrawerOpen?: () => void
   onDrawerClose?: () => void
 }
+
+const PHONE_NUMBER = '312-820-4947'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -47,6 +49,7 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: 'space-around',
       marginTop: theme.spacing(1),
       marginBottom: theme.spacing(1),
+      padding: theme.spacing(2),
     },
     spacer: {
       height: '100%',
@@ -85,7 +88,7 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
       >
         <div className={styles.drawer}>
           <div className={styles.logo}>
-            <Typography variant="h6">Cooley Logo</Typography>
+            <Image src={LogoImage} alt="Logo" />
           </div>
 
           <Divider />
@@ -97,15 +100,6 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
                   <HomeIcon />
                 </ListItemIcon>
                 <ListItemText primary="Home" />
-              </ListItem>
-            </Link>
-
-            <Link href="/profile">
-              <ListItem button onClick={onDrawerClose}>
-                <ListItemIcon className={styles.listItemIcon}>
-                  <AccountIcon />
-                </ListItemIcon>
-                <ListItemText primary="Profile" />
               </ListItem>
             </Link>
 
@@ -152,14 +146,14 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
 
           <Divider />
           <List>
-            <Link href="tel:708-261-2306">
+            <Link href={`tel:${PHONE_NUMBER}`}>
               <ListItem button>
                 <ListItemIcon className={styles.listItemIcon}>
                   <PhoneIcon />
                 </ListItemIcon>
                 <ListItemText
                   classes={smallListItemClasses}
-                  primary="708-261-2306"
+                  primary={PHONE_NUMBER}
                 />
               </ListItem>
             </Link>

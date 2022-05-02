@@ -6,8 +6,3 @@ CooleyNext:
     # domain: 'cleaningwithcooley.com'
     # cloudfront:
     #   distributionId: 'E31LUZRV95T20P'
-
-resources:
-  Resources:
-    CognitoUserPool:
-      Type: AWS::Cognito::UserPool

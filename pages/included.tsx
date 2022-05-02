@@ -6,8 +6,11 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Image from 'next/image'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import LivingRoomImage from '../public/images/livingroom.jpg'
+import BathroomImage from '../public/images/bathroom.jpg'
+import KitchenImage from '../public/images/kitchen.jpg'
+import RoomImage from '../public/images/everyroom.jpg'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -57,14 +60,43 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
+const DetailsContent = [
+  {
+    key: 'bedroom',
+    img: LivingRoomImage,
+    imgTitle: 'Living Room Image',
+    title: 'Bedrooms & Living Room',
+    description:
+      'General tidying up, mirrors cleaned, make bed (change linen by request). Dust all accessible surfaces also wipe and clean window sills.',
+  },
+  {
+    key: 'bathroom',
+    img: BathroomImage,
+    imgTitle: 'Bathroom Image',
+    title: 'Bathrooms',
+    description:
+      'Shower/bathtub and tile wall scrubbed clean and disinfected. Toilet scrubbed clean and disinfected including base and behind toilet. Vanity and sink scrubbed clean and disinfected, mirrors cleaned, fixtures cleaned and shined.',
+  },
+  {
+    key: 'kitchen',
+    img: KitchenImage,
+    imgTitle: 'Kitchen Image',
+    title: 'Kitchens',
+    description:
+      'Clean the stovetop and backsplash. Clean and sanitize interior and exterior of microwave. Clean the exterior of appliances, clean and disinfect the sink. Hand-wash and disinfect counters, wipe down table and chairs. Cabinets wiped down. Hand-wipe outside of the trash can.',
+  },
+  {
+    key: 'room',
+    img: RoomImage,
+    imgTitle: 'Room Image',
+    title: 'Every Room',
+    description:
+      'General tidying up, clean all floor surfaces (vacuum & mop). Dust exposed baseboards and remove smudges from light switch plates. Clean window sills and remove trash and recycling.',
+  },
+]
+
 const Included: React.FunctionComponent = () => {
-  const [contents, setContents] = useState([])
-  useEffect(() => {
-    axios.get('/api/details').then((response) => {
-      const { data } = response
-      setContents(data)
-    })
-  }, [])
+  const contents = DetailsContent
   const styles = useStyles()
 
   const rows = contents.map((row) => {
