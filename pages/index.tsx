@@ -29,11 +29,11 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
     },
     slide: {
-      // padding: 15,
       height: 600,
       width: '100%',
       overflow: 'hidden',
-      // color: '#fff',
+      display: 'block',
+      position: 'relative',
     },
     row: {
       marginBottom: theme.spacing(8),
@@ -92,7 +92,15 @@ const Home: React.FunctionComponent = () => {
           {CarouselImages.map((img, idx) => {
             return (
               <div key={idx} className={styles.slide}>
-                <Image src={img} alt={`carousel-image-${idx}`} />
+                <Image
+                  src={img}
+                  alt={`carousel-image-${idx}`}
+                  objectFit="cover"
+                  layout="fill"
+                  width="100%"
+                  height={600}
+                  loading="eager"
+                />
               </div>
             )
           })}

@@ -56,7 +56,7 @@ export interface Props {
 }
 
 const Carousel: React.FC<Props> = (props: Props) => {
-  const { children, interval = 3000, control = false } = props
+  const { children, interval = 10000, control = false } = props
   const viewCount = children.length ?? 0
   const styles = useStyles()
   const [index, setIndex] = useState(0)
