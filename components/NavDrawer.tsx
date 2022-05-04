@@ -12,6 +12,7 @@ import HelpIcon from '@material-ui/icons/Help'
 import LockIcon from '@material-ui/icons/Lock'
 import PhoneIcon from '@material-ui/icons/Phone'
 import EmailIcon from '@material-ui/icons/Email'
+import MoreIcon from '@material-ui/icons/More'
 import Link from 'next/link'
 import Image from 'next/image'
 import LogoImage from '../public/images/logo_main.png'
@@ -74,7 +75,6 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
   return (
     <nav className={styles.navContainer} aria-label="navigation drawer">
       <SwipeableDrawer
-        // variant="temporary"
         anchor="left"
         open={open}
         onClose={onDrawerClose}
@@ -88,7 +88,13 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
       >
         <div className={styles.drawer}>
           <div className={styles.logo}>
-            <Image src={LogoImage} alt="Logo" />
+            <Image
+              objectFit="contain"
+              layout="intrinsic"
+              height={200}
+              src={LogoImage}
+              alt="Logo"
+            />
           </div>
 
           <Divider />
@@ -117,7 +123,16 @@ const NavDrawer: React.FC<Props> = (props: Props) => {
                 <ListItemIcon className={styles.listItemIcon}>
                   <OfferIcon />
                 </ListItemIcon>
-                <ListItemText primary="Services" />
+                <ListItemText primary="Our Service" />
+              </ListItem>
+            </Link>
+
+            <Link href="/included">
+              <ListItem button onClick={onDrawerClose}>
+                <ListItemIcon className={styles.listItemIcon}>
+                  <MoreIcon />
+                </ListItemIcon>
+                <ListItemText primary="Service Details" />
               </ListItem>
             </Link>
 

@@ -41,7 +41,7 @@ const FAQContent = [
   },
   {
     title: 'How do I pay?',
-    text: 'We accept Cash payments, Checks, Credit Cards, Zelle, Cash App, Venmo, PayPal and Apple Pay.',
+    text: 'We accept Cash payments, Checks, Credit Cards, Zelle, Venmo, and Apple Pay.',
   },
   {
     title: 'Is a long-term contract required for service?',

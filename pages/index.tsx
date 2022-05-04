@@ -38,6 +38,11 @@ const useStyles = makeStyles((theme: Theme) =>
     row: {
       marginBottom: theme.spacing(8),
     },
+    imageRow: {
+      marginBottom: theme.spacing(4),
+      display: 'flex',
+      alignItems: 'center',
+    },
     largeButton: {
       color: 'white',
       padding: `${theme.spacing(2)}px ${theme.spacing(4)}px`,
@@ -56,6 +61,13 @@ const useStyles = makeStyles((theme: Theme) =>
     badgeImage: {
       width: 150,
       height: 150,
+      cursor: 'pointer',
+      marginLeft: theme.spacing(2),
+      marginRight: theme.spacing(2),
+    },
+    sealImage: {
+      width: 200,
+      height: 42,
       cursor: 'pointer',
       marginLeft: theme.spacing(2),
       marginRight: theme.spacing(2),
@@ -97,8 +109,8 @@ const Home: React.FunctionComponent = () => {
                   alt={`carousel-image-${idx}`}
                   objectFit="cover"
                   layout="fill"
-                  width="100%"
-                  height={600}
+                  // width="100%"
+                  // height={600}
                   loading="eager"
                 />
               </div>
@@ -122,7 +134,7 @@ const Home: React.FunctionComponent = () => {
                   color="primary"
                 >
                   <Typography variant="h6">
-                    Contact Us For Free Quote
+                    Contact Us For A Free Quote
                   </Typography>
                 </Button>
               </Link>
@@ -144,7 +156,7 @@ const Home: React.FunctionComponent = () => {
                 <HomeCard title="Who We Are" icon="fas fa-user-tie">
                   Cleaning with Cooley is a Chicago Cleaning Service located in
                   the downtown Chicago area. We offer a wide range of services
-                  to residential clients and business owners, from general room
+                  to residential clients and business owners, from general house
                   cleaning, office cleaning and much more!
                 </HomeCard>
 
@@ -243,14 +255,14 @@ const Home: React.FunctionComponent = () => {
                   color="primary"
                 >
                   <Typography variant="h6">
-                    Contact Us For Free Quote
+                    Contact Us For A Free Quote
                   </Typography>
                 </Button>
               </Link>
             </Grid>
 
             <Grid
-              className={styles.row}
+              className={styles.imageRow}
               container
               justifyContent="center"
               item
@@ -267,6 +279,14 @@ const Home: React.FunctionComponent = () => {
               <div className={styles.bondedImage}>
                 <Image src={BondedImage} alt="Liscenced and Bonded" />
               </div>
+              <Link href="https://www.bbb.org/us/il/chicago/profile/cleaning-services/cleaning-with-cooley-llc-0654-1000028192/#sealclick">
+                <div className={styles.sealImage}>
+                  <img
+                    src="https://seal-chicago.bbb.org/seals/blue-seal-200-42-bbb-1000028192.png"
+                    alt="Cleaning With Cooley, LLC BBB Business Review"
+                  />
+                </div>
+              </Link>
             </Grid>
           </Grid>
         </Container>

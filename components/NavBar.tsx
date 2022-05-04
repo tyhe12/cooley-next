@@ -48,10 +48,6 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingLeft: theme.spacing(2),
       paddingRight: theme.spacing(2),
     },
-    imageContainer: {
-      height: 230,
-      width: 45,
-    },
     logoLink: {
       cursor: 'pointer',
     },
@@ -95,11 +91,11 @@ const NavBar: React.FC<Props> = (props: Props) => {
             <Link href="/">
               <Image
                 layout="intrinsic"
-                className={styles.imageContainer}
                 src={LogoImage}
-                width={230}
-                height={45}
+                height={60}
+                width={90}
                 alt="Logo"
+                objectFit="contain"
               />
             </Link>
           </div>

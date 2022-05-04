@@ -18,17 +18,15 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.contrastText,
       width: '100%',
-      // borderTop: '1px solid grey',
     },
     logoContainer: {
       display: 'flex',
-      marginTop: theme.spacing(8),
+      paddingTop: theme.spacing(4),
       justifyContent: 'center',
-      height: 100,
     },
     socialsContainer: {
       display: 'flex',
-      marginTop: theme.spacing(8),
+      marginTop: theme.spacing(4),
       marginBottom: theme.spacing(4),
       justifyContent: 'center',
     },
@@ -43,15 +41,13 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     actionButton: {
       color: 'inherit',
-      // marginLeft: theme.spacing(2)
     },
     icon: {
       fill: 'white',
     },
     logo: {
-      marginTop: theme.spacing(4),
-      height: 100,
-      width: 100,
+      height: 150,
+      width: 150,
     },
   })
 )
@@ -105,7 +101,7 @@ const Footer: React.FC = () => {
         </Link>
 
         <Typography variant="body2">
-          © 2019, Cleaning with Cooley. All Rights Reserved.
+          © 2019 Cleaning with Cooley. All Rights Reserved.
         </Typography>
       </div>
     </footer>

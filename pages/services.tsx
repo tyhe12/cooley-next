@@ -45,75 +45,70 @@ const mapElement = (service) => {
 const ServicesConstant = {
   services: [
     {
-      key: 'one-bed',
-      title: 'Studio/One Bedroom',
-      subtitle: '',
-    },
-    {
-      key: 'two-bed',
-      title: 'Two Bedroom',
-      subtitle: '',
-    },
-    {
-      key: 'three-bed',
-      title: 'Three Bedroom',
-      subtitle: '',
-    },
-    {
-      key: 'house',
-      title: 'House Clean',
-      subtitle: '',
-    },
-    {
-      key: 'commercial',
-      title: 'Commercial Clean',
-      subtitle: '',
-    },
-    {
-      key: 'event',
-      title: 'Special Event Clean',
+      key: 'apartments',
+      title: 'Apartments',
       subtitle: '',
     },
     {
       key: 'airbnb',
-      title: 'Airbnb Turnover Clean',
+      title: 'Airbnb Turnover',
       subtitle: '',
     },
     {
-      key: 'condo',
-      title: 'Condo Association Clean',
+      key: 'condos',
+      title: 'Condos',
       subtitle: '',
     },
     {
-      key: 'move',
-      title: 'Move In/Out Clean',
+      key: 'condo-associate',
+      title: 'Condo Association',
       subtitle: '',
     },
     {
-      key: 'room',
-      title: 'Individual Room Clean',
+      key: 'family',
+      title: 'Family Homes',
+      subtitle: '',
+    },
+    {
+      key: 'event',
+      title: 'Special Events',
+      subtitle: '',
+    },
+    {
+      key: 'indie',
+      title: 'Individual Rooms',
       subtitle: '',
     },
     {
       key: 'salon',
-      title: 'Beauty/Barber Shops',
+      title: 'Beauty Barber Shops',
+      subtitle: '',
+    },
+    {
+      key: 'move',
+      title: 'Move In Move Out',
+      subtitle: '',
+    },
+    {
+      key: 'commercial',
+      title: 'Commercial',
       subtitle: '',
     },
   ],
   addons: [
     {
       key: 'window',
-      title: 'Interior Window Clean',
+      title: 'Interior Window',
       subtitle: '',
     },
     {
       key: 'fridge',
-      title: 'Interior Refrigerator Clean',
+      title: 'Interior Refrigerator',
       subtitle: '',
     },
     {
       key: 'oven',
-      title: 'Interior Oven Clean',
+      title: 'Interior Oven',
       subtitle: '',
     },
     {
@@ -133,16 +128,6 @@ const ServicesConstant = {
     },
   ],
 }
-
-// const createSkeleton = (val, idx) => {
-//   return (
-//     <Grid key={idx} xs={12} md={6} item>
-//       <ServiceCard>
-
-//       </ServiceCard>
-//     </Grid>
-//   )
-// }
 
 const Services: React.FunctionComponent = () => {
   const styles = useStyles()
