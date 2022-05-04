@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
     <footer className={styles.footer} color="secondary">
       <div className={styles.logoContainer}>
         <div className={styles.logo}>
-          <Image src={LogoRound} alt="Logo" />
+          <Image src={LogoRound} alt="Logo" loading="eager" />
         </div>
       </div>
 

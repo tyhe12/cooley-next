@@ -109,8 +109,6 @@ const Home: React.FunctionComponent = () => {
                   alt={`carousel-image-${idx}`}
                   objectFit="cover"
                   layout="fill"
-                  // width="100%"
-                  // height={600}
                   loading="eager"
                 />
               </div>

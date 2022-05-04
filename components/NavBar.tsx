@@ -96,6 +96,7 @@ const NavBar: React.FC<Props> = (props: Props) => {
                 width={90}
                 alt="Logo"
                 objectFit="contain"
+                loading="eager"
               />
             </Link>
           </div>
