@@ -3,6 +3,6 @@ CooleyNext:
   inputs:
     bucketName: 'cooley-assets'
     bucketRegion: 'us-east-2'
-    # domain: 'cleaningwithcooley.com'
+    domain: ['dev', 'cleaningwithcooley.com']
     # cloudfront:
     #   distributionId: 'E31LUZRV95T20P'
