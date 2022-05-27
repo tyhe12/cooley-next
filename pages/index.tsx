@@ -10,9 +10,9 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 import Link from 'next/link'
 import Image from 'next/image'
 import BondedImage from '../public/images/bonded.png'
-import CarouselImage1 from '../public/images/carousel_1.jpg'
-import CarouselImage2 from '../public/images/carousel_2.jpg'
-import CarouselImage3 from '../public/images/carousel_3.jpg'
+// import CarouselImage1 from '../public/images/carousel_1.jpg'
+// import CarouselImage2 from '../public/images/carousel_2.jpg'
+// import CarouselImage3 from '../public/images/carousel_3.jpg'
 import CarouselImage4 from '../public/images/carousel_4.jpg'
 import CarouselImage5 from '../public/images/carousel_5.jpg'
 import CarouselImage6 from '../public/images/carousel_6.jpg'
@@ -86,9 +86,9 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const PHONE_NUMBER = '312-820-4947'
 const CarouselImages = [
-  CarouselImage1,
-  CarouselImage2,
-  CarouselImage3,
+  // CarouselImage1,
+  // CarouselImage2,
+  // CarouselImage3,
   CarouselImage4,
   CarouselImage5,
   CarouselImage6,

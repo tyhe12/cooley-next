@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
+      paddingBottom: theme.spacing(4),
     },
     title: {
       marginTop: theme.spacing(8),
@@ -154,7 +155,9 @@ const Faqs: React.FunctionComponent = () => {
               <Typography>
                 We will clean every room for you, for more details please check
                 out
-                <Link className={styles.linkText}>What Is Included</Link>
+                <Link href="/included" className={styles.linkText}>
+                  Service Details
+                </Link>
               </Typography>
             </AccordionDetails>
           </Accordion>

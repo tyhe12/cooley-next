@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
+      paddingBottom: theme.spacing(4),
     },
     title: {
       marginTop: theme.spacing(4),
@@ -37,11 +38,14 @@ const useStyles = makeStyles((theme: Theme) =>
     cardRoot: {
       display: 'flex',
       justifyContent: 'center',
-      height: 200,
+      minHeight: 200,
     },
     imageContainer: {
-      height: 200,
-      width: 200,
+      minHeight: 200,
+      minWidth: 200,
+      maxWidth: '30%',
+      display: 'flex',
+      alignItems: 'center',
     },
     cardDetails: {
       width: '100%',
@@ -53,6 +57,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     cardImage: {
       objectFit: 'cover',
+      borderRadius: 8,
     },
     cardTitle: {
       marginBottom: theme.spacing(1),
@@ -106,11 +111,10 @@ const Included: React.FunctionComponent = () => {
         <Card className={styles.cardRoot}>
           <div className={styles.imageContainer}>
             <Image
-              layout="fixed"
+              layout="intrinsic"
+              objectFit="cover"
               className={styles.cardImage}
               src={img}
-              width={200}
-              height={200}
               alt={imgTitle}
             />
           </div>
@@ -146,7 +150,6 @@ const Included: React.FunctionComponent = () => {
                 Service Details
               </Typography>
             </Grid>
-
             {rows}
           </Grid>
         </Container>

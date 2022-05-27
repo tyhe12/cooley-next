@@ -50,6 +50,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     logoLink: {
       cursor: 'pointer',
+      minWidth: 64,
     },
   })
 )
