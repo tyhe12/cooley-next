@@ -43,17 +43,11 @@ const useStyles = makeStyles((theme: Theme) =>
     imageContainer: {
       minHeight: 200,
       minWidth: 200,
-      maxWidth: '30%',
       display: 'flex',
       alignItems: 'center',
     },
     cardDetails: {
       width: '100%',
-      marginTop: theme.spacing(2),
-      marginBottom: theme.spacing(2),
-    },
-    cardContent: {
-      marginLeft: theme.spacing(4),
     },
     cardImage: {
       objectFit: 'cover',
@@ -109,27 +103,33 @@ const Included: React.FunctionComponent = () => {
     return (
       <Grid key={key} className={styles.row} item xs={12}>
         <Card className={styles.cardRoot}>
-          <div className={styles.imageContainer}>
-            <Image
-              layout="intrinsic"
-              objectFit="cover"
-              className={styles.cardImage}
-              src={img}
-              alt={imgTitle}
-            />
-          </div>
-          <div className={styles.cardDetails}>
-            <CardContent className={styles.cardContent}>
-              <Typography
-                className={styles.cardTitle}
-                component="h5"
-                variant="h5"
-              >
-                {title}
-              </Typography>
-              <Typography color="textSecondary">{description}</Typography>
-            </CardContent>
-          </div>
+          <Grid container spacing={1}>
+            <Grid item xs={12} sm={4}>
+              <div className={styles.imageContainer}>
+                <Image
+                  layout="intrinsic"
+                  objectFit="cover"
+                  className={styles.cardImage}
+                  src={img}
+                  alt={imgTitle}
+                />
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={8}>
+              <div className={styles.cardDetails}>
+                <CardContent>
+                  <Typography
+                    className={styles.cardTitle}
+                    component="h5"
+                    variant="h5"
+                  >
+                    {title}
+                  </Typography>
+                  <Typography color="textSecondary">{description}</Typography>
+                </CardContent>
+              </div>
+            </Grid>
+          </Grid>
         </Card>
       </Grid>
     )
