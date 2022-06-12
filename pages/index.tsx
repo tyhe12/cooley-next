@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
-import React from 'react'
+import React, { useState } from 'react'
 import Carousel from '../components/Carousel'
 import HomeCard from '../components/HomeCard'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
@@ -17,6 +17,7 @@ import CarouselImage4 from '../public/images/carousel_4.jpg'
 import CarouselImage5 from '../public/images/carousel_5.jpg'
 import CarouselImage6 from '../public/images/carousel_6.jpg'
 import CarouselImage7 from '../public/images/carousel_7.jpg'
+import Banner from '../components/Banner'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -81,6 +82,18 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: theme.spacing(2),
       marginRight: theme.spacing(2),
     },
+    bannerContent: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      backgroundColor: 'white',
+      boxShadow: '0px -6px 12px rgba(0,0,0,0.12)',
+      padding: `${theme.spacing(1.5)}px ${theme.spacing(2)}px`,
+      alignItems: 'center',
+    },
+    bannerLink: {
+      textDecoration: 'underline',
+      cursor: 'pointer',
+    },
   })
 )
 
@@ -97,6 +110,7 @@ const CarouselImages = [
 
 const Home: React.FunctionComponent = () => {
   const styles = useStyles()
+  const [showBanner, setShowBanner] = useState(true)
   return (
     <div className={styles.container}>
       <Head>
@@ -295,6 +309,24 @@ const Home: React.FunctionComponent = () => {
           </Grid>
         </Container>
       </main>
+      {showBanner && (
+        <Banner>
+          <div className={styles.bannerContent}>
+            <Link href="/covid19">
+              <div className={styles.bannerLink}>
+                Please review our safety measures for Covid-19 here
+              </div>
+            </Link>
+            <Button
+              size="large"
+              onClick={() => setShowBanner(false)}
+              color="inherit"
+            >
+              DISMISS
+            </Button>
+          </div>
+        </Banner>
+      )}
     </div>
   )
 }
